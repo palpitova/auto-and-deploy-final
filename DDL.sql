@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS data_shops (
     item_name VARCHAR(255) NOT NULL,
     category VARCHAR(100),
     amount INTEGER NOT NULL,
-    price NUMERIC(10, 2) NOT NULL, -- NUMERIC лучше для денег, чем REAL
+    price NUMERIC(10, 2) NOT NULL,
     discount NUMERIC(10, 2) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
