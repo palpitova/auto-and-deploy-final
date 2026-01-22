@@ -28,3 +28,6 @@
 Установите драйвер для работы с PostgreSQL:
 ```bash
 pip3 install psycopg2-binary
+
+### Шаг 3. Настройка Базы Данных
+
