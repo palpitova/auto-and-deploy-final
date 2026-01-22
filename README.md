@@ -28,6 +28,39 @@
 Установите драйвер для работы с PostgreSQL:
 ```bash
 pip3 install psycopg2-binary
+ ```
 
 ### Шаг 3. Настройка Базы Данных
+1. Зайдите в PostgreSQL (через pgAdmin или терминал) и создайте базу данных (если нет).
+2. Выполните SQL-запрос для создания таблицы из файла DDL
+```bash
+CREATE TABLE IF NOT EXISTS data_shops (
+    id SERIAL PRIMARY KEY,
+    doc_id VARCHAR(50) NOT NULL,
+    shop_id INTEGER NOT NULL,
+    cash_id INTEGER NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    amount INTEGER NOT NULL,
+    price NUMERIC(10, 2) NOT NULL,
+    discount NUMERIC(10, 2) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ ```
+
+### Шаг 4. Конфигурация скриптов
+1. Настройка подключения к БД (postgr_data.py). Откройте файл postgr_data.py и найдите блок конфигурации. Укажите свои данные:
+```bash
+DB_HOST = 'localhost'
+DB_NAME = 'postgres'      # Имя вашей БД
+DB_USER = 'postgres'      # Ваш логин
+DB_PASS = 'ваш_пароль'    # Ваш пароль
+ ```
+
+2. Настройка путей (run_tasks.sh) Откройте файл run_tasks.sh и убедитесь, что пути ведут к правильной папке на новой машине:
+
+
+
+
+
 
